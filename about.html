@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>DLS calculator in cricket</title>
+        <style>
+            .success {
+              font-weight:bold;
+              border: 10 px solid lightorange;
+              padding: 10 px;
+              text-align: center;
+              color: red;
+              font-size: large;
+            }
+      
+            .error {
+              font-weight: bold;
+              color: red;
+            }
+      
+            .success img {
+              display: block;
+              margin: 0 auto;
+              max-width: 100%;
+              height: auto;
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+      
+            p {
+              font-family: Arial, sans-serif;
+              font-size: 20px;
+              line-height: 1.5;
+              color: #333333;
+              margin-bottom: 20px;
+              border: 3px solid #FF0000;
+              padding: 10px;
+              background-color: aquamarine;
+              text-align:justify
+            }
+           .success h5 {
+                font-size: 44px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+              }
+          
+          </style>
+      </head>
+    
+<body>
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+-->
+<div class="min-h-full">
+    <nav class="bg-gray-800">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+            </div>
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="dls.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">SCENARIO 1</a>
+                <a href="dls2.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">SCENARIO 2</a>
+                <a href="dls3.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">SCENARIO 3</a>
+                <a href="about.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">ABOUT</a>
+              
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-4 flex items-center md:ml-6">
+              <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+               
+              </button>
+  
+              <!-- Profile dropdown -->
+              <div class="relative ml-3">
+                <div>
+                  <button type="button" class="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <span class="sr-only">Open user menu</span>
+                    
+                  </button>
+                </div>
+  
+                <!--
+                  Dropdown menu, show/hide based on menu state.
+  
+                  Entering: "transition ease-out duration-100"
+                    From: "transform opacity-0 scale-95"
+                    To: "transform opacity-100 scale-100"
+                  Leaving: "transition ease-in duration-75"
+                    From: "transform opacity-100 scale-100"
+                    To: "transform opacity-0 scale-95"
+                -->
+                
+              </div>
+            </div>
+          </div>
+          <div class="-mr-2 flex md:hidden">
+            <!-- Mobile menu button -->
+            <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <!-- Menu open: "hidden", Menu closed: "block" -->
+              <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <!-- Menu open: "block", Menu closed: "hidden" -->
+              <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="md:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          <a href="dls.html" class="text-gray-300 hover:bg-gray-700 hover:text-white">SCENARIO 1</a>
+          <a href="dls2.html" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">SCENARIO 2</a>
+          <a href="dls3.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">SCENARIO 3</a>
+          <a href="about.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">ABOUT</a>
+        </div>
+        <div class="border-t border-gray-700 pb-3 pt-4">
+          <div class="flex items-center px-5">
+            <div class="flex-shrink-0">
+             
+            </div>
+            <div class="ml-3">
+              <div class="text-base font-medium leading-none text-white">Tom Cook</div>
+              <div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
+            </div>
+            <button type="button" class="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+              <span class="sr-only">View notifications</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+              </svg>
+            </button>
+          </div>
+        
+        </div>
+      </div>
+    </nav>
+  
+    <header class="bg-white shadow">
+      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900">DUCKWORTH-LEWIS CALCULATOR</h1>
+      </div>
+    </header>
+    <div class="success">
+        <h5>THE DLS SYSTEM</h5><br>
+        <img src="https://ss-i.thgim.com/public/incoming/hatlf6/article65706423.ece/alternates/LANDSCAPE_1200/1160986949.jpg"/>
+        <br><br>
+       <h5> What is the DLS?</h5><br><br>
+<p>
+The Duckworth-Lewis-Stern or DLS method (as it is now known) is a mathematical system employed to calculate target scores and reach outcomes in rain-shortened limited-overs matches. Devised by English statisticians Frank Duckworth and Tony Lewis and originally named after them, it was first used in 1997. Australian academic Steve Stern updated the formula, becoming its custodian ahead of the 2015 World Cup; his name was added to the title.
+    </p>
+    <br><br>
+    <h5>Why is it needed?</h5><br><br>
+<p>
+Having a reserve day in place for a limited-overs match and resuming proceedings the following morning would seem ideal, but logistical and scheduling challenges mean this is not always feasible. And so the game’s administrators have for long laboured to find the fairest way of settling rain-affected one-dayers. When a match is interrupted by inclement weather, and one or both teams do not get their full quota of overs, an outcome has to be reached in the time available after resumption of play. What any calculation is doing is trying to adjust a target score according to the reduction in overs. Any number is an estimate: there is no one right answer. What the ICC has tried to do is arrive at a formula that takes into account as many parameters as possible and properly reflects the efforts of both teams. The DLS method, which has been updated a few times, is generally considered the most accurate system used in international cricket.</p>
+<br><br><h5>How does the DLS method work?</h5><br><br>
+<p>
+Neither the ARR nor the MPO methods were able to factor the match situation into their calculations, failing to take into account the wickets a team had left. The DLS method addresses this issue, considering both wickets and overs as resources and revising the target based on the availability of those resources. At the start of an innings, a team has 100% of its resources — 50 overs and 10 wickets — available. The DLS method expresses the balls and wickets remaining at any point as a percentage. How much is a wicket or a ball worth in percentage terms? This is calculated according to a formula which takes into account the scoring pattern in international matches, derived from analysis of data (ODI and T20, men and women) from a sliding four-year window. On the first of July every year, a new year’s worth of data is added; so the DLS evolves as scoring trends do.
+
+The rate at which resources deplete is not constant over the course of an innings: the curve is exponential, with that resource percentage falling faster as more wickets are lost and more balls are consumed.
+
+The DLS methods sets targets (and decides outcomes) by calculating how many runs teams should score (and would have scored) if the resources available to both sides were equal. To calculate a target, the formula may simply be expressed thus: Team 2’s par score = Team 1’s score x (Team 2’s resources/Team 1’s resources). In international cricket, the resource values (which are not publicly available) are obtained from a computer programme.
+
+The DLS method also allows for the fact that a team batting before a rain interruption would have batted differently had it known the game was going to be truncated. Of course, the weighting of wickets and overs is based on a formula, and there can be no universally perfect weightage, simply because the method cannot make qualitative measurements of individual batting abilities. It was long felt that under the D-L method, teams chasing big totals were better off keeping wickets in hand when rain was around the corner even if it meant scoring at a lower rate. Steve Stern felt he had improved on the D-L method in this regard by adjusting the formula to reflect changing realities in high-scoring ODIs and T20 matches.
+
+An older version of the DL method (called the D-L Standard Edition), meant to be used where computers are not available, applies pre-calculated resource values off a chart. Where upward revisions are required (when the first innings is interrupted), a quantity called the G50 — the average total score in a 50-over innings — is used as reference. For matches involving ICC full member nations, G50 is currently fixed at 245. However, the Standard Edition is not used in international cricket.    
+</p></div>  
+  </body>
+  </html>
