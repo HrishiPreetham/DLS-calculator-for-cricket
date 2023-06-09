@@ -1,1 +1,1 @@
-# DLS-calculator-for-cricket
+This repository contains the html files along with the source code required to implement the DLS system used in cricket in the event of any rain delays. The user can choose any of the 3 scenarios available as described based on the requirements of the user. 
